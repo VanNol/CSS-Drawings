@@ -1,0 +1,156 @@
+html,
+body {
+  font-family: Lato;
+  margin: 0;
+  padding: 0;
+  background: rgb(59,145,198);
+  background: linear-gradient(180deg, rgba(59,145,198,1) 60%, rgba(73,105,189,1) 93%);
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  width: 300px;
+  height: 550px;
+  border: 3px solid #cccccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #eee;
+  box-shadow: 9px 9px 9px 0px rgba(51,51,51,1);
+}
+.home-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #bdc3c7;
+  position: absolute;
+  bottom: 15px;
+  border-radius: 50%;
+  left: 42%;
+}
+.camera {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 25px;
+  left: 35%;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.speaker {
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  top: 25px;
+  left: 41%;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.screen {
+  width: 270px;
+  height: 432px;
+  background-color: #E6F2EE;
+  position: absolute;
+  top: 45px;
+  left: 12px;
+  border-radius: 6px;
+  border: 2px solid #555;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.inner-screen {
+  width: 282px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.var_nav {
+  position: relative;
+  background: #456990;
+  width: 300px;
+  height: 71px;
+  border-bottom: 1px solid #fff;
+}
+
+.link_bg {
+  width: 71px;
+  height: 71px;
+  position: absolute;
+  background-color: #F45B69;
+  color: #fff;
+  z-index: 2;
+}
+
+.link_bg i {
+  position: relative;
+}
+
+.link_title {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  color: #fff;
+}
+
+.link_title:hover .icon {
+  transform: rotate(360deg);
+}
+
+.var_nav:hover .link_bg {
+  width: 100%;
+  background-color: #F45B69;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon {
+  position: relative;
+  font-size: 33px;
+  text-align: center;
+  color: #fff;
+  float: left;
+  transition: all 0.5 ease-in-out;
+  top: 20px;
+  left: 17px;
+}
+
+.icon i {
+  display: block;
+}
+
+a {
+  display: block;
+  position: absolute;
+  float: left;
+  font-family: Arial;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  height: 71px;
+  text-align: center;
+}
+
+span {
+  display: block;
+  margin-top: 25px;
+}

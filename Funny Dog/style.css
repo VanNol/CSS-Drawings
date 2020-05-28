@@ -1,0 +1,228 @@
+* {
+    margin: 0px;
+    paddding: 0px;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    background-image: linear-gradient(to top, #688298 0%, #9ccdb4 100%);
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .frida {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .head {
+    width: 250px;
+    height: 220px;
+    background-color: #F4BA7B;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 4;
+  }
+  .head:before {
+    content: '';
+    width: 210px;
+    height: 200px;
+    background-color: #F4BA7B;
+    position: absolute;
+    border-radius: 80px;
+    top: 25px;
+    left: 17px;
+    transform: rotate(45deg);
+    z-indx: 5;
+  }
+    
+  .mouth {
+    position: relative;
+    width: 160px;
+    height:140px;
+    top: 75px;
+    left: 45px;
+    transform: rotate(180deg);
+    z-index: 6;
+      }
+      .mouth:before,
+      .mouth:after {
+        position: absolute;
+        content: "";
+        left: 80px;
+        top: 0;
+        width: 80px;
+        height: 130px;
+        background: #EC8413;
+        border-radius: 50px 50px 50px 50px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+      .mouth:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+    
+  .nose {
+    position: absolute;
+    bottom: 70px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid black;
+    z-index: 10;
+    border-radius: 50%;
+    transform: rotate(180deg);
+  }
+  
+  .eyes {
+    position: absolute;
+    width: 22px;
+    height: 27px;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 130px;
+    left: 60px;
+    box-shadow: 100px 0px 0px black;
+  }
+  
+  .eyes:before,
+  .eyes:after {
+    content: '';
+    position: absolute;
+    top: -17px;
+    width: 66px;
+    height: 7px;
+    background-color: transparent;
+    border-top: 7px solid black;
+    border-radius: 50%;
+  }
+  .eyes:before {
+    left: 80px;
+  }
+  .eyes:after {
+    right: -20px;
+  }
+  
+  .ears {
+    width: 180px;
+      height: 150px;
+      position: absolute;
+      z-index: 1;
+      top: -113px;
+      border-radius: 150px 0 150px 0;
+      background-color: #F4BA7B;
+  }
+  .ears:after {
+      content: "";
+    width: 150px;
+      height: 130px;
+      position: absolute;
+      z-index: 2;
+      top: 8px;
+      left: 20px;
+      border-radius: 150px 0 150px 0;
+      transform: rotate(-179deg);
+      background-color: #fee2d2;
+  }
+  .left_ear {
+      left: -132px;
+      transform: rotate(-105deg);
+  }
+  .right_ear {
+      right: -132px;
+      transform: rotate(-4deg);
+  }
+  
+  .body {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #EC8413;
+    border-radius: 90px 90px 50px 90px;
+    top: 195px;
+  }
+  
+  .body:before {
+    content: '';
+    width: 195px;
+    height: 199px;
+    position: absolute;
+    top: -2px;
+    background-color: #F4BA7B;
+    left: calc(50% - 70px);
+      border-radius: 100px 100px 0 0;
+  }
+  
+  .body:after {
+    content: '';
+    width: 80px;
+    height: 120px;
+    position: absolute;
+    background-color: #EC8413;
+    border-radius: 100px 100px 0 0;
+    z-index: 0;
+    top: 80px;
+    left: 94px;
+  }
+  
+  .shoe {
+    width: 65px;
+    height: 47px;
+    position: absolute;
+    top: 155px;
+    left: 28px;
+    z-index: 20px;
+    background-color: #fee2d2;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 140px 0 0 #fee2d2;
+  }
+  
+  .tail {
+    width: 17px;
+    height: 100px;
+    position: absolute;
+    top: 60px;
+    left: calc(50% - 125px);
+    background-color: #EC8413;
+    transform: rotate(-50deg);
+    border-radius: 10px 10px 0 0px;
+  }
+  
+  footer {
+    background: #454f5b;
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 13px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 987;
+  }
+  
+  footer i {
+    color: #ee7898;
+  }
+  
+  footer a {
+    color: #ee7898;
+    text-decoration: none;
+  }

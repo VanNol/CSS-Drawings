@@ -1,0 +1,261 @@
+$dark-ground: #042919;
+$orange: #D78539;
+$dark-yellow: #DFB72C;
+$yellow: #EDED86;
+$dark-blue: #0E529B;
+$blue: #4898CB;
+
+.html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  position: absolute;
+}
+
+*:before,
+*:after {
+  content: "";
+  position: absolute;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $dark-blue;
+  background-image: linear-gradient(
+    $dark-blue 0%,
+    $blue 45%,
+    $orange 85%
+  )
+}
+
+.stars {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	.star {
+		border-radius: 50%;
+		background-color: $yellow;
+		animation: twinkle 5s linear infinite;
+	}
+	@for $i from 1 through (60) {
+		$size: random(4)+px;
+		$top: random(100)+vh;
+		$left: random(100)+vw;
+		.star:nth-of-type(#{$i}) {
+			width: $size;
+			height: $size;
+			top: $top;
+			left: $left;
+		}
+	}
+}
+
+.mountains {
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  .mountain {
+    width: 250px;
+    height: 250px;
+    bottom: -200px;
+    right: 50px;
+    background-color: $dark-ground;
+    transform: rotate(45deg);
+    border-radius: 35px;
+    z-index: 3;
+    &after {
+      width: 100%;
+      height: 240px;
+      opacity: 0.9;
+      background-image: linear-gradient(135deg, #ffffff 0%, #042B1B 40%, #021A10 60%)
+    }
+  }
+  .mountain:nth-child(2) {
+    width: 240px;
+    height: 230px;
+    right: -50px;
+    background-color: #021A10;
+  }
+  .mountain:nth-child(3) {
+    width: 200px;
+    height: 220px;
+    right: 170px;
+    background-color: #021A10;
+  }
+  .mountain:nth-child(4) {
+    width: 260px;
+    height: 220px;
+    right: 450px;
+  }
+  .mountain:nth-child(5) {
+    width: 200px;
+    height: 240px;
+    right: 280px;
+  }
+  .mountain:nth-child(6) {
+    width: 200px;
+    height: 270px;
+    right: 380px;
+    background-color: #021A10;
+  }
+  .mountain:nth-child(7) {
+    width: 200px;
+    height: 220px;
+    right: 320px;
+    background-color: #021A10;
+  }
+  .mountain:nth-child(8) {
+    width: 200px;
+    height: 320px;
+    right: 670px;
+    background-color: #021A10;
+  }
+  .mountain:nth-child(9) {
+    width: 200px;
+    height: 240px;
+    right: 760px;
+  }
+  .mountain:nth-child(10) {
+    width: 200px;
+    height: 280px;
+    right: 910px;
+    background-color: #021A10;
+  }
+}
+
+.lighthouse-group {
+  height: 100%;
+  width: 50%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.lighthouse-base {
+  width: 120px;
+  height: 450px;
+  bottom: 20px;
+  left: 180px;
+  background: rgb(242,239,187);
+background: linear-gradient(180deg, rgba(242,239,187,1) 0%, rgba(221,215,121,1) 22%, rgba(179,176,127,1) 53%, rgba(148,144,76,1) 100%);
+  transform-style: preserve-3d;
+  transform: perspective(600px) rotateX(20deg);
+  &:after {
+    width: 100%;
+    height: 100%;
+    opacity: 1; 
+    box-shadow: inset 29px -1px 15px 2px #f2ef8a;
+  }
+}
+
+.windows {
+  width: 100%;
+  height: 100%;
+  .window {
+    background-color: $dark-ground;
+    height: 25px;
+    width: 15px;
+    left: 50px; 
+    border-bottom: 2px solid #A7C1D9; 
+  }
+  $bottom: 90px;
+  @for $i from 1 through (4) {
+    .window:nth-of-type(#{$i}) {
+      bottom: $bottom;
+    }
+    $bottom: $bottom + 90px;
+  }
+}
+
+.lighthouse-middle .middle-down {
+  width: 135px;
+  height: 35px;
+  top: 205px;
+  left: 173px;
+  border-bottom: 2px solid $dark-ground;
+  clip-path: polygon(0 41%, 100% 41%, 89% 100%, 11% 100%);          
+  background-color: #f2efbb;
+}
+.lighthouse-middle .middle-railing {
+  width: 133px;
+  height: 45px;
+  top: 179px;
+  left: 174px;
+  background-color: #f2efbb;
+  border-bottom: 4px double $dark-ground;
+  transform: perspective(600px) rotateX(20deg);
+  z-index: 2;
+  &:after {
+    width: 100%;
+    height: 40px;
+    bottom: -2px;
+    border: 1px solid $dark-ground;
+    border-radius: 1px;
+    transform: perspective(1600px) rotateX(-30deg);
+    background-image: repeating-linear-gradient(90deg, $dark-ground, $dark-ground 1px, #37648C 1px, #f2efbb 10px);
+    background-position: -2px 0;
+  }
+}
+
+.lighthouse-top .lighthouse-house {
+  width: 90px;
+  height: 55px;
+  top: 126px;
+  left: 196px;
+  border-radius: 17px 17px 0 0;
+  background: rgb(242,239,187);
+  background: linear-gradient(180deg, rgba(242,239,187,1) 0%, rgba(221,215,121,1) 49%, rgba(207,199,80,1) 86%);
+  box-shadow: inset 29px -1px 15px 2px #f2ef8a;
+  z-index: 1;
+  &:after {
+    width: 37px;
+    height: 37px;
+    top: 10px;
+    left: 27px;
+    background: rgb(17,43,66);
+    background: radial-gradient(circle, rgba(17,43,66,1) 13%, rgba(214,211,21,1) 18%);
+    border-radius: 50%;
+    border: 5px double $dark-ground;
+  }
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0%);}
+  100% {transform: rotate(360%);}
+}
+
+.lighthouse-top .lighthouse-peak {
+  width: 22px;
+  height: 22px;
+  top: 103px;
+  left: 230px;
+  border-radius: 50% 50% 0 0;
+  background: rgb(77,81,84);
+  background: linear-gradient(90deg, rgba(77,81,84,1) 29%, rgba(77,81,84,1) 45%, rgba(31,33,36,1) 100%);
+}
+
